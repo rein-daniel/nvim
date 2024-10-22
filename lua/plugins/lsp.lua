@@ -1,4 +1,4 @@
-return { 
+return {
   {
     "VonHeikemen/lsp-zero.nvim",
   },
@@ -33,4 +33,3 @@ return {
     "saadparwaiz1/cmp_luasnip",
   },
 }
-
