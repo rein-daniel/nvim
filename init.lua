@@ -2,6 +2,8 @@ require("config.lazy")
 require("config.treesitter")
 require("config.nvim-tree")
 require("config.lsp")
+require("config.tokyonight")
+require("config.lualine")
 
 vim.g.have_nerd_font = true
 
