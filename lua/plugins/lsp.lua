@@ -12,24 +12,23 @@ return {
     "neovim/nvim-lspconfig",
   },
   {
-    "hrsh7th/cmp-nvim-lsp",
-  },
-  {
-    "hrsh7th/cmp-buffer",
-  },
-  {
-    "hrsh7th/cmp-path",
-  },
-  {
-    "hrsh7th/cmp-cmdline",
-  },
-  {
-    "hrsh7th/nvim-cmp",
-  },
-  {
-    "L3MON4D3/LuaSnip",
-  },
-  {
-    "saadparwaiz1/cmp_luasnip",
-  },
+    'saghen/blink.cmp',
+    dependencies = { 'rafamadriz/friendly-snippets' },
+
+    version = '1.*',
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
+    opts = {
+      keymap = { preset = 'default' },
+      appearance = {
+        nerd_font_variant = 'mono'
+      },
+      completion = { documentation = { auto_show = false } },
+      sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+      },
+      fuzzy = { implementation = "prefer_rust_with_warning" }
+    },
+    opts_extend = { "sources.default" }
+  }
 }
