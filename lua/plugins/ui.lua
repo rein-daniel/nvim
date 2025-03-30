@@ -1,7 +1,3 @@
--- make background transparent
-local custom_theme = require("lualine.themes.tokyonight")
-custom_theme.normal.c.bg = nil
-
 return {
   {
     "nvim-lualine/lualine.nvim",
@@ -9,7 +5,7 @@ return {
     opts = {
       options = {
         icons_enabled = true,
-        theme = custom_theme,
+        theme = "auto",
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
@@ -352,6 +348,11 @@ return {
       })
 
       vim.keymap.set("n", "<leader>e", "<Cmd>Neotree reveal<CR>")
+      vim.keymap.set("n", "<leader>gi", "<Cmd>Neotree float git_status<CR>")
     end,
+  },
+  {
+    "folke/noice.nvim",
+    lazy = true,
   },
 }
