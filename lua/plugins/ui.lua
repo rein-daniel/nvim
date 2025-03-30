@@ -44,18 +44,6 @@ return {
       extensions = {}
     }
   },
-  -- If you want neo-tree's file operations to work with LSP (updating imports, etc.), you can use a plugin like
-  -- https://github.com/antosha417/nvim-lsp-file-operations:
-  -- {
-  --   "antosha417/nvim-lsp-file-operations",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-neo-tree/neo-tree.nvim",
-  --   },
-  --   config = function()
-  --     require("lsp-file-operations").setup()
-  --   end,
-  -- },
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -150,26 +138,6 @@ return {
               staged = "",
               conflict = "",
             },
-          },
-          file_size = {
-            enabled = true,
-            width = 12,          -- width of the column
-            required_width = 64, -- min width of window required to show this column
-          },
-          type = {
-            enabled = true,
-            width = 10,           -- width of the column
-            required_width = 122, -- min width of window required to show this column
-          },
-          last_modified = {
-            enabled = true,
-            width = 20,          -- width of the column
-            required_width = 88, -- min width of window required to show this column
-          },
-          created = {
-            enabled = true,
-            width = 20,           -- width of the column
-            required_width = 110, -- min width of window required to show this column
           },
           symlink_target = {
             enabled = false,
@@ -353,6 +321,12 @@ return {
   },
   {
     "folke/noice.nvim",
-    lazy = true,
-  },
+    event = "VeryLazy",
+    opts = {
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  }
 }
